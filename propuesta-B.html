@@ -50,7 +50,7 @@
   .hg{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
   .hg .txt{padding:0 70px 0 0}
   .hg p{color:#c2d3b8;margin-bottom:18px;font-weight:300}
-  .hg .img{border-radius:3px;overflow:hidden;min-height:460px;background:center/cover}
+  .hg .img{border-radius:3px;width:100%;height:100%;min-height:460px;object-fit:cover;object-position:center;display:block}
   .stat-row{display:flex;gap:50px;margin-top:34px}
   .stat b{display:block;font-size:2.6rem;color:var(--dorado);font-weight:800;line-height:1}
   .stat span{font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;color:#a9c09e}
@@ -97,7 +97,7 @@
     section{padding:80px 0}
     .menu{display:none}.ham{display:flex}
     .hg,.pgrid,.cgrid,.foot{grid-template-columns:1fr}
-    .hg .txt{padding:0 0 40px}.hg .img{min-height:300px}
+    .hg .txt{padding:0 0 40px}.hg .img{min-height:0;height:auto}
     .hero,.band,.contacto{background-attachment:scroll}
     .menu.open{display:flex;position:absolute;top:100%;left:0;right:0;background:rgba(15,28,11,.97);flex-direction:column;padding:20px 30px;gap:18px}
   }
@@ -133,7 +133,7 @@
       <div class="stat"><b>2</b><span>Procesos</span></div>
     </div>
   </div>
-  <div class="img reveal" style="background-image:url('assets/familia-banderaazul.jpg')"></div>
+  <img class="img reveal" src="assets/familia-banderaazul.jpg" alt="La familia de Café Arbolada con la Bandera Azul Ecológica">
 </div></section>
 
 <section class="band"><div class="wrap"><p class="q">“Cuidamos la tierra para que las próximas generaciones sigan cultivando un café <b>excepcional</b>.”</p></div></section>
