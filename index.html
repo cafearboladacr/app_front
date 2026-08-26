@@ -1,99 +1,789 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Propuestas de diseño — Café Arbolada</title>
-<link rel="icon" href="assets/isotipo.png">
-<style>
-  :root{--verde-900:#1E3A1E;--verde-800:#2E4A2E;--verde-600:#4F7942;--verde-100:#DCE8D5;
-    --crema:#F7F4EC;--dorado:#C9A24B;--texto:#2b2b2b;--muted:#6b6b6b;
-    --serif:'Georgia',serif;--sans:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--sombra:0 12px 34px rgba(30,58,30,.14)}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:var(--sans);background:var(--crema);color:var(--texto);line-height:1.6}
-  .wrap{max-width:1240px;margin:0 auto;padding:0 26px}
-  a{text-decoration:none;color:inherit}
-  header{background:var(--verde-800);color:#fff;padding:52px 0}
-  header img{height:50px;margin-bottom:18px}
-  header h1{font-family:var(--serif);font-size:2.4rem;margin-bottom:8px}
-  header p{opacity:.9;max-width:70ch}
-  .step{background:var(--dorado);color:#3b2a20;display:inline-block;font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:6px 14px;border-radius:50px;margin-bottom:18px}
-  section{padding:52px 0}
-  h2{font-family:var(--serif);color:var(--verde-900);font-size:1.7rem;margin-bottom:6px}
-  .sub{color:var(--muted);margin-bottom:28px;max-width:70ch}
-  .aux{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .aux a{background:#fff;border-radius:14px;padding:22px 24px;box-shadow:var(--sombra);display:flex;gap:16px;align-items:center;transition:.25s;border:1px solid rgba(30,58,30,.06)}
-  .aux a:hover{transform:translateY(-4px)}
-  .aux .em{font-size:1.9rem}
-  .aux b{color:var(--verde-900);font-family:var(--serif);font-size:1.15rem}
-  .aux span{color:var(--muted);font-size:.9rem}
-  .props{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-  .prop{background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--sombra);display:flex;flex-direction:column;border:1px solid rgba(30,58,30,.06)}
-  .prop .top{padding:24px 26px 18px}
-  .prop .k{font-size:.74rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700;color:var(--dorado);margin-bottom:8px}
-  .prop h3{font-family:var(--serif);color:var(--verde-900);font-size:1.6rem;margin-bottom:8px}
-  .prop .d{color:#555;font-size:.96rem;margin-bottom:12px}
-  .prop .ideal{background:var(--verde-100);color:var(--verde-800);font-size:.86rem;padding:10px 14px;border-radius:10px}
-  .prop .ideal b{font-weight:700}
-  .frame{position:relative;background:#e9e6dd;border-top:1px solid #e2ddd0;border-bottom:1px solid #e2ddd0;height:460px;overflow:hidden}
-  .frame .bar{height:34px;background:#f3efe6;display:flex;align-items:center;gap:6px;padding:0 14px;border-bottom:1px solid #e2ddd0}
-  .frame .bar i{width:11px;height:11px;border-radius:50%;background:#cfc9bb;display:block}
-  .frame iframe{width:166.6%;height:1000px;border:0;transform:scale(.6);transform-origin:top left}
-  .frame .fh{height:426px;overflow:hidden}
-  .prop .act{padding:20px 26px;display:flex;gap:12px;flex-wrap:wrap}
-  .btn{padding:13px 24px;border-radius:50px;font-weight:600;font-size:.92rem;cursor:pointer;transition:.2s}
-  .b1{background:var(--verde-600);color:#fff}.b1:hover{background:var(--verde-800)}
-  .b2{background:transparent;border:2px solid var(--verde-600);color:var(--verde-800)}.b2:hover{background:var(--verde-600);color:#fff}
-  .note{background:#fff;border-left:4px solid var(--dorado);border-radius:0 12px 12px 0;padding:20px 24px;box-shadow:var(--sombra);color:#4a4a4a;font-size:.95rem}
-  footer{background:var(--verde-900);color:#c3d5ba;padding:28px 0;text-align:center;font-size:.85rem}
-  @media(max-width:900px){.aux,.props{grid-template-columns:1fr}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Arbolada — Propuesta B · Naturaleza inmersiva</title>
+  <meta name="description"
+    content="Café de especialidad del volcán Poás. Naturaleza, sostenibilidad y cuatro generaciones de tradición cafetalera.">
+  <link rel="icon" href="assets/isotipo.png">
+  <style>
+    :root {
+      --verde-900: #20301a;
+      --verde-800: #28401d;
+      --verde-700: #324C24;
+      --verde-600: #3f5a2c;
+      --verde-400: #6D7B62;
+      --crema: #F2F3EB;
+      --dorado: #A7B294;
+      --texto: #eaf0e4;
+      --dark: #182312;
+      --sans: 'Century Gothic', 'Questrial', 'Futura', 'Segoe UI', system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--dark);
+      color: var(--texto);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -.02em
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .32em;
+      font-size: .74rem;
+      font-weight: 700;
+      color: var(--dorado);
+      margin-bottom: 20px
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 34px;
+      border-radius: 2px;
+      font-weight: 700;
+      font-size: .9rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      transition: .25s;
+      cursor: pointer;
+      border: 2px solid transparent
+    }
+
+    .b1 {
+      background: var(--dorado);
+      color: #1c2b12
+    }
+
+    .b1:hover {
+      background: #c3cbb3
+    }
+
+    .b2 {
+      border-color: rgba(255, 255, 255, .6);
+      color: #fff
+    }
+
+    .b2:hover {
+      background: rgba(255, 255, 255, .14)
+    }
+
+    /* nav */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      transition: .35s;
+      padding: 22px 0
+    }
+
+    header.solid {
+      background: rgba(15, 28, 11, .92);
+      backdrop-filter: blur(10px);
+      padding: 12px 0;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .35)
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .nav img {
+      height: 42px;
+      transition: .3s
+    }
+
+    header.solid .nav img {
+      height: 34px
+    }
+
+    .menu {
+      display: flex;
+      gap: 34px;
+      list-style: none;
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 600;
+      align-items: center
+    }
+
+    .menu a:hover {
+      color: var(--dorado)
+    }
+
+    .menu .cta {
+      border: 1.5px solid var(--dorado);
+      color: var(--dorado);
+      padding: 9px 18px;
+      border-radius: 2px
+    }
+
+    .menu .cta:hover {
+      background: var(--dorado);
+      color: #20330f
+    }
+
+    .ham {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: 0;
+      cursor: pointer
+    }
+
+    .ham span {
+      width: 28px;
+      height: 2px;
+      background: #fff
+    }
+
+    /* hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      color: #fff;
+      background: linear-gradient(rgba(15, 28, 11, .55), rgba(15, 28, 11, .78)), url('assets/finca-1.jpg') center/cover fixed
+    }
+
+    .hero-in {
+      max-width: 860px
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      margin-bottom: 26px
+    }
+
+    .hero h1 span {
+      color: var(--dorado)
+    }
+
+    .hero p {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      max-width: 44ch;
+      color: #e7efe0;
+      margin-bottom: 38px;
+      font-weight: 300
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap
+    }
+
+    .scroll-ind {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 255, 255, .7);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      text-align: center
+    }
+
+    .scroll-ind::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: rgba(255, 255, 255, .5);
+      margin: 0 auto 8px
+    }
+
+    /* secciones */
+    section {
+      padding: 120px 0
+    }
+
+    .st {
+      font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+      margin-bottom: 22px;
+      color: #fff
+    }
+
+    .lead {
+      font-size: 1.15rem;
+      color: #c2d3b8;
+      max-width: 60ch;
+      font-weight: 300
+    }
+
+    .historia {
+      background: var(--verde-900)
+    }
+
+    .hg {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: stretch
+    }
+
+    .hg .txt {
+      padding: 0 70px 0 0;
+      min-width: 0
+    }
+
+    .hg p {
+      color: #c2d3b8;
+      margin-bottom: 18px;
+      font-weight: 300
+    }
+
+    .hg .img {
+      border-radius: 3px;
+      width: 100%;
+      height: 100%;
+      min-height: 460px;
+      object-fit: cover;
+      object-position: center;
+      display: block
+    }
+
+    .stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      margin-top: 34px
+    }
+
+    .stat b {
+      display: block;
+      font-size: 2.6rem;
+      color: var(--dorado);
+      font-weight: 800;
+      line-height: 1
+    }
+
+    .stat span {
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #a9c09e
+    }
+
+    /* banda parallax */
+    .band {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(rgba(15, 28, 11, .4), rgba(15, 28, 11, .65)), url('assets/cielo.jpg') center/cover fixed
+    }
+
+    .band .q {
+      font-size: clamp(1.6rem, 3.6vw, 2.7rem);
+      font-weight: 300;
+      max-width: 22ch;
+      margin: 0 auto;
+      line-height: 1.3
+    }
+
+    .band .q b {
+      font-weight: 800;
+      color: var(--dorado)
+    }
+
+    /* productos */
+    .productos {
+      background: var(--verde-800)
+    }
+
+    .phead {
+      text-align: center;
+      max-width: 60ch;
+      margin: 0 auto 60px
+    }
+
+    .phead .lead {
+      margin: 0 auto
+    }
+
+    .prod-list {
+      max-width: 1040px;
+      margin: 0 auto
+    }
+
+    .prod {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 90px
+    }
+
+    .prod:last-child {
+      margin-bottom: 0
+    }
+
+    .prod.rev .prod-img {
+      order: 2
+    }
+
+    .prod-img {
+      display: flex;
+      justify-content: center
+    }
+
+    .prod-img img {
+      width: auto;
+      max-width: 100%;
+      max-height: 540px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 26px 60px rgba(0, 0, 0, .5)
+    }
+
+    .prod-txt .k {
+      color: var(--dorado);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .74rem;
+      font-weight: 700;
+      margin-bottom: 12px
+    }
+
+    .prod-txt h3 {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      color: #fff
+    }
+
+    .prod-txt p {
+      color: #c9d8c0;
+      font-weight: 300;
+      font-size: 1.05rem;
+      max-width: 46ch
+    }
+
+    /* cert */
+    .cert {
+      background: var(--verde-900);
+      text-align: center
+    }
+
+    .cgrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      margin-top: 54px;
+      max-width: 820px;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .cc {
+      border: 1px solid rgba(167, 178, 148, .4);
+      border-radius: 3px;
+      padding: 40px 30px;
+      background: rgba(167, 178, 148, .07)
+    }
+
+    .cc-logo {
+      display: inline-flex;
+      background: #fff;
+      border-radius: 16px;
+      padding: 18px 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, .34)
+    }
+
+    .cc-logo img {
+      height: 128px;
+      width: auto;
+      display: block
+    }
+
+    .cc h3 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: 8px
+    }
+
+    .cc p {
+      color: #bcd0b2;
+      font-weight: 300;
+      font-size: .95rem
+    }
+
+    .cc .stars {
+      margin-top: 16px;
+      color: var(--dorado);
+      font-size: 1.4rem;
+      letter-spacing: 5px
+    }
+
+    .cc .stars small {
+      display: block;
+      letter-spacing: normal;
+      font-size: .78rem;
+      color: #a9c09e;
+      margin-top: 8px
+    }
+
+    /* contacto */
+    .contacto {
+      background: linear-gradient(rgba(15, 28, 11, .82), rgba(15, 28, 11, .9)), url('assets/finca-3.jpg') center/cover fixed;
+      text-align: center
+    }
+
+    .contacto .lead {
+      margin: 0 auto 34px
+    }
+
+    /* footer */
+    footer {
+      background: var(--dark);
+      padding: 56px 0 28px
+    }
+
+    .foot {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 34px
+    }
+
+    .foot img {
+      height: 56px;
+      margin-bottom: 14px
+    }
+
+    .foot p {
+      color: #9db392;
+      font-weight: 300
+    }
+
+    footer h5 {
+      color: var(--dorado);
+      text-transform: uppercase;
+      font-size: .78rem;
+      letter-spacing: .14em;
+      margin-bottom: 14px
+    }
+
+    footer ul {
+      list-style: none
+    }
+
+    footer li {
+      margin-bottom: 9px;
+      color: #9db392
+    }
+
+    footer a:hover {
+      color: #fff
+    }
+
+    .fb {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      padding-top: 20px;
+      font-size: .8rem;
+      color: #7e9673;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: .8s
+    }
+
+    .reveal.vis {
+      opacity: 1;
+      transform: none
+    }
+
+    @media(max-width:900px) {
+      section {
+        padding: 80px 0
+      }
+
+      .menu {
+        display: none
+      }
+
+      .ham {
+        display: flex
+      }
+
+      .hg,
+      .pgrid,
+      .cgrid,
+      .foot {
+        grid-template-columns: 1fr
+      }
+
+      .hg .txt {
+        padding: 0 0 40px
+      }
+
+      .hg .img {
+        min-height: 0;
+        height: auto
+      }
+
+      .stat-row {
+        gap: 22px
+      }
+
+      .prod {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 60px;
+        text-align: center
+      }
+
+      .prod.rev .prod-img {
+        order: 0
+      }
+
+      .prod-img img {
+        max-height: 460px
+      }
+
+      .prod-txt p {
+        margin-left: auto;
+        margin-right: auto
+      }
+
+      .hero,
+      .band,
+      .contacto {
+        background-attachment: scroll
+      }
+
+      .menu.open {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(15, 28, 11, .97);
+        flex-direction: column;
+        padding: 20px 30px;
+        gap: 18px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header><div class="wrap">
-  <img src="assets/logo-horizontal-neg.png" alt="Café Arbolada">
-  <span class="step">Etapa · Diseño UI/UX (propuestas)</span>
-  <h1>Propuestas de diseño de la página web</h1>
-  <p>Este documento reúne el trabajo de diseño de la landing de Café Arbolada: la guía de estilo, la estructura (wireframes) y dos direcciones visuales distintas para que la beneficiaria elija una.</p>
-</div></header>
-
-<section><div class="wrap">
-  <h2>Material de apoyo</h2>
-  <p class="sub">La base sobre la que se construyen las propuestas.</p>
-  <div class="aux">
-    <a href="guia-de-estilo/index.html" target="_blank"><span class="em">🎨</span><div><b>Guía de estilo</b><br><span>Colores, tipografía, uso del logo y componentes.</span></div></a>
-    <a href="wireframes/index.html" target="_blank"><span class="em">🗺️</span><div><b>Mapa del sitio + Wireframes</b><br><span>Estructura de la landing (escritorio y móvil).</span></div></a>
-  </div>
-</div></section>
-
-<section style="padding-top:8px"><div class="wrap">
-  <h2>Dos direcciones de diseño</h2>
-  <p class="sub">Mismas secciones y contenido, dos personalidades visuales. Puedes abrir cada una a pantalla completa y navegarla. La idea es elegir una dirección (o combinar lo que más guste de cada una).</p>
-  <div class="props">
-    <div class="prop">
-      <div class="top">
-        <div class="k">Propuesta A</div><h3>Cálida &amp; Editorial</h3>
-        <p class="d">Fondo crema, tipografía serif elegante y la historia familiar como protagonista. Sensación artesanal, cercana y premium.</p>
-        <div class="ideal"><b>Ideal si:</b> quieren transmitir tradición, calidez y el lado humano/familiar de la marca.</div>
-      </div>
-      <div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="fh"><iframe src="propuesta-A.html" title="Propuesta A" loading="lazy"></iframe></div></div>
-      <div class="act"><a href="propuesta-A.html" target="_blank" class="btn b1">Ver completa ↗</a></div>
+  <header id="hd">
+    <div class="wrap nav">
+      <a href="#inicio"><img src="assets/logo-horizontal-neg.png" alt="Café Arbolada"></a>
+      <ul class="menu" id="menu">
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#cert">Certificaciones</a></li>
+        <li><a href="#contacto" class="cta">Contacto</a></li>
+      </ul>
+      <button class="ham" id="ham"><span></span><span></span><span></span></button>
     </div>
-    <div class="prop">
-      <div class="top">
-        <div class="k">Propuesta B</div><h3>Naturaleza inmersiva</h3>
-        <p class="d">Fotografías a pantalla completa, verdes oscuros y tipografía moderna. Sensación cinematográfica, con foco en el origen y la naturaleza.</p>
-        <div class="ideal"><b>Ideal si:</b> quieren impacto visual, un tono contemporáneo y destacar el entorno natural.</div>
-      </div>
-      <div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="fh"><iframe src="propuesta-B.html" title="Propuesta B" loading="lazy"></iframe></div></div>
-      <div class="act"><a href="propuesta-B.html" target="_blank" class="btn b1">Ver completa ↗</a></div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="wrap hero-in">
+      <div class="eyebrow">Volcán Poás · Costa Rica</div>
+      <h1>Esta familia lo que es, es por el <span>café</span></h1>
+      <p>Café de especialidad cultivado bajo sombra por cuatro generaciones, con prácticas que protegen la naturaleza.
+      </p>
+      <div class="hero-actions"><a href="#productos" class="btn b1">Ver los cafés</a><a href="#historia"
+          class="btn b2">Conócenos</a></div>
     </div>
-  </div>
-</div></section>
+    <div class="scroll-ind">Descubre</div>
+  </section>
 
-<section style="padding-top:8px"><div class="wrap">
-  <div class="note"><b>Nota:</b> el contenido (textos, fotos y datos de contacto) es preliminar y se ajustará con la información que brinde la beneficiaria. Las fotografías provienen del material recolectado de la finca. Una vez elegida la dirección, se pule esa propuesta y se prepara para publicación en GitHub Pages.</div>
-</div></section>
+  <section class="historia" id="historia">
+    <div class="wrap hg">
+      <div class="txt reveal">
+        <div class="eyebrow">Nuestra historia</div>
+        <h2 class="st">Raíces en el Poás</h2>
+        <p>Somos una familia cafetalera de cuatro generaciones, en las faldas del volcán Poás, cultivando café en los
+          cantones de Grecia y Poás. Diana, Ingeniera agrónoma e hija de productores, junto a su esposo Félix,
+          transformó la cosecha familiar en un café de especialidad.</p>
+        <p>Cultivamos con buenas prácticas agrícolas que aseguran sostenibilidad, porque creemos que el mejor café nace
+          del respeto por la tierra.</p>
+        <div class="stat-row">
+          <div class="stat"><b>4</b><span>Generaciones</span></div>
+          <div class="stat"><b>4</b><span>Fincas</span></div>
+          <div class="stat"><b>2</b><span>Procesos</span></div>
+        </div>
+      </div>
+      <img class="img reveal" src="assets/familia-banderaazul.jpg"
+        alt="La familia de Café Arbolada con la Bandera Azul Ecológica">
+    </div>
+  </section>
 
-<footer>Propuestas de diseño UI/UX · Café Arbolada · Proyecto TCU — Jeshua Herrera Salas</footer>
+  <section class="band">
+    <div class="wrap">
+      <p class="q">“Nuestras prácticas sostenibles aseguran un producto sostenible y un <b>legado</b> para las
+        siguientes generaciones.”</p>
+    </div>
+  </section>
+
+  <section class="productos" id="productos">
+    <div class="wrap">
+      <div class="phead reveal">
+        <div class="eyebrow">Nuestros cafés</div>
+        <h2 class="st">Dos procesos, un origen</h2>
+        <p class="lead">Cultivados y beneficiados con dedicación para expresar lo mejor de nuestra tierra volcánica.</p>
+      </div>
+      <div class="prod-list">
+        <article class="prod reveal">
+          <div class="prod-img"><img src="assets/ProcesoLavado.jpeg" alt="Bolsa de Café Lavado de Café Arbolada"></div>
+          <div class="prod-txt">
+            <div class="k">Proceso tradicional</div>
+            <h3>Café Lavado</h3>
+            <p>Cuerpo sedoso y acidez cítrica, con notas a chocolate, caramelo y frutos secos —almendra, avellana y
+              nuez— y un toque especiado. Taza limpia y equilibrada.</p>
+          </div>
+        </article>
+        <article class="prod rev reveal">
+          <div class="prod-img"><img src="assets/BlackHoney.jpeg" alt="Bolsa de Black Honey de Café Arbolada"></div>
+          <div class="prod-txt">
+            <div class="k">Edición especial</div>
+            <h3>Black Honey</h3>
+            <p>Dulce y frutal —mango, uchuva, melón y naranja madura—, con notas a toronja y ralladura de naranja.
+              Cuerpo cremoso y acidez tartárica. Taza limpia y compleja.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cert" id="cert">
+    <div class="wrap">
+      <div class="reveal" style="max-width:60ch;margin:0 auto">
+        <h2 class="st">Certificaciones</h2>
+        <p class="lead" style="margin:0 auto">Nuestras prácticas están respaldadas por certificaciones ambientales.</p>
+      </div>
+      <div class="cgrid">
+        <div class="cc reveal">
+          <div class="cc-logo"><img src="assets/cert-bandera-azul.png" alt="Bandera Azul Ecológica"></div>
+          <h3>Bandera Azul Ecológica</h3>
+          <p>Galardón costarricense (Agropecuaria) a la gestión ambiental sostenible.</p>
+          <div class="stars">★★★★<small>4 estrellas · 2025</small></div>
+        </div>
+        <div class="cc reveal">
+          <div class="cc-logo"><img src="assets/cert-rainforest.png" alt="Rainforest Alliance"></div>
+          <h3>Rainforest Alliance</h3>
+          <p>Certificación internacional de conservación de la biodiversidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="wrap">
+      <div class="reveal" style="max-width:60ch;margin:0 auto">
+        <div class="eyebrow">Contacto</div>
+        <h2 class="st">Llevá el bosque a tu taza</h2>
+        <p class="lead">¿Querés comprar nuestro café o distribuirlo en tu cafetería? Escribinos.</p>
+        <a href="https://wa.me/50689645797" target="_blank" class="btn b1">Escribir por WhatsApp</a>
+        <p style="margin-top:26px;color:#c2d3b8;font-weight:300">Grecia y Poás, Alajuela · +506 8964-5797 ·
+          cafearboladacr@gmail.com · <a href="https://www.instagram.com/cafe_arbolada" target="_blank"
+            style="color:var(--dorado)">@cafe_arbolada</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div><img src="assets/logo-horizontal-neg.png" alt="Café Arbolada">
+          <p>Café de especialidad del volcán Poás. Naturaleza, sostenibilidad y tradición en cada taza.</p>
+        </div>
+        <div>
+          <h5>Navegación</h5>
+          <ul>
+            <li><a href="#historia">Historia</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#cert">Certificaciones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contacto</h5>
+          <ul>
+            <li>Grecia y Poás, Alajuela</li>
+            <li>WhatsApp: +506 8964-5797</li>
+            <li>cafearboladacr@gmail.com</li>
+            <li><a href="https://www.instagram.com/cafe_arbolada" target="_blank">@cafe_arbolada</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fb"><span>© 2026 Café Arbolada.</span><span>Bandera Azul Ecológica · Rainforest Alliance</span></div>
+    </div>
+  </footer>
+
+  <script>
+    var hd = document.getElementById('hd'), ham = document.getElementById('ham'), menu = document.getElementById('menu');
+    ham.addEventListener('click', function () { menu.classList.toggle('open') });
+    menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { menu.classList.remove('open') }) });
+    window.addEventListener('scroll', function () { hd.classList.toggle('solid', window.scrollY > 60) });
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target) } }) }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el) });
+  </script>
 </body>
+
 </html>
